@@ -1,8 +1,20 @@
-@@ .. @@
-   "scripts": {
-     "dev": "vite",
-     "build": "tsc && vite build",
--    "preview": "vite preview"
-+    "preview": "vite preview",
-+    "functions:serve": "supabase functions serve"
-   },
+{
+  "name": "edumate-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "functions:serve": "supabase functions serve"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "@stripe/stripe-js": "^2.4.0"
+  }
+}
