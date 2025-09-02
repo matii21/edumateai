@@ -261,7 +261,12 @@ class EduMateAI {
         await navigator.serviceWorker.register('/sw.js')
         console.log('🔧 Service Worker registered successfully')
       } catch (error) {
-        console.error('Service Worker registration failed:', error)
+        const errorMessage = (error as Error).message
+        if (errorMessage.includes('Service Workers are not yet supported on StackBlitz')) {
+          console.warn('⚠️ Service Worker not available in StackBlitz environment - this is expected')
+        } else {
+          console.error('Service Worker registration failed:', error)
+        }
       }
     }
   }
